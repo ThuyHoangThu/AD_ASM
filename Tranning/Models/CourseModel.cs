@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Tranning.DataDBContext;
 using Tranning.Validations;
 
 namespace Tranning.Models
@@ -14,6 +15,9 @@ namespace Tranning.Models
 
         [Required(ErrorMessage = "Enter Category, please")]
         public int category_id { get; set; }
+
+        public virtual Category Category { get; set; }
+        public string categoryName { get; set; }
 
         [Required(ErrorMessage = "Enter name, please")]
         public string name { get; set; }

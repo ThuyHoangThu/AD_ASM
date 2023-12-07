@@ -11,6 +11,7 @@ namespace Tranning.DataDBContext
 
         [ForeignKey("category_id")]
         public int category_id { get; set; }
+        public virtual Category Category { get; set; }
 
         [Column("name", TypeName = "Varchar(50)"), Required]
         public string name { get; set; }

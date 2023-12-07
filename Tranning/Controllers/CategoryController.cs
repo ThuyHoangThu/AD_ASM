@@ -16,13 +16,7 @@ namespace Tranning.Controllers
 
         [HttpGet]
         public IActionResult Index(string SearchString)
-        {
-
-            //check dang nhap
-            //if (string.IsNullOrEmpty(HttpContext.Session.GetString("SessionUsername")))
-            //{
-            //    return RedirectToAction(nameof(LoginController.Index), "Login");
-            //}
+        {    
 
             CategoryModel categoryModel = new CategoryModel();
             categoryModel.CategoryDetailLists = new List<CategoryDetail>();

@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Course page";
     // co the code nhu trong controller
-    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    Layout = "~/Views/Shared/_TrainingStaffLayout.cshtml";
     bool statusAdd = Convert.ToBoolean(TempData["SaveStatus"]);
     bool statusUpdate = Convert.ToBoolean(TempData["UpdateStatus"]);
 }
@@ -67,13 +67,12 @@
                     <tr>
                         <td>@item.id</td>
                         <td>@item.name</td>
-                        <td>@item.category_id</td>
+                        <td>@item.Category?.name</td>
                         <td style="display: flex; justify-content: center; align-items: center;">
                             <img width="50%" class="img-fluid" src="/uploads/images/@item.avatar" />
                         </td>
 
                         <td>@item.description</td>
-
                         <td>@item.status</td>
                         <td>@item.created_at</td>
                         <td>@item.updated_at</td>

@@ -4,17 +4,14 @@ namespace Tranning
 {
     public class DatabaseConnection
     {
-        public static string GetStrConnection()
-        {
-            string strConnection = @"Data Source=DUK-FUC;Initial Catalog=Tranning;User ID=sa;Password=20072003;TrustServerCertificate=True;";
-            return strConnection;
-        }
+        public DatabaseConnection() { }
 
         public static SqlConnection GetSqlConnection()
         {
-            string strConnection = DatabaseConnection.GetStrConnection();
-            SqlConnection connection = new SqlConnection(strConnection);
+            string connectionString = "Server=DESKTOP-RUN1CAB;Database=ASMTraining;Trusted_Connection=True;TrustServerCertificate=True";
+            SqlConnection connection = new SqlConnection(connectionString);
             return connection;
         }
+
     }
 }

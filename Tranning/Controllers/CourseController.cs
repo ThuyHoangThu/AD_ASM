@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Tranning.DataDBContext;
 using Tranning.Models;
 
@@ -20,21 +21,21 @@ namespace Tranning.Controllers
             CourseModel courseModel = new CourseModel();
             courseModel.CourseDetailLists = new List<CourseDetail>();
 
-            var data = from m in _dbContext.Courses select m;
+            var data = _dbContext.Courses.Include(c => c.Category).Where(m => m.deleted_at == null);
 
-            data = data.Where(m => m.deleted_at == null);
             if (!string.IsNullOrEmpty(SearchString))
             {
                 data = data.Where(m => m.name.Contains(SearchString) || m.description.Contains(SearchString));
             }
-            data.ToList();
 
-            foreach (var item in data)
+            var courses = data.ToList();
+
+            foreach (var item in courses)
             {
                 courseModel.CourseDetailLists.Add(new CourseDetail
                 {
                     id = item.id,
-                    category_id = item.category_id, 
+                    category_id = item.category_id,
                     name = item.name,
                     description = item.description,
                     avatar = item.avatar,
@@ -42,12 +43,15 @@ namespace Tranning.Controllers
                     start_date = item.start_date,
                     end_date = item.end_date,
                     created_at = item.created_at,
-                    updated_at = item.updated_at
+                    updated_at = item.updated_at,
+                    categoryName = item.Category?.name // Assuming your Category model has a 'name' property
                 });
             }
+
             ViewData["CurrentFilter"] = SearchString;
             return View(courseModel);
         }
+
 
         [HttpGet]
         public IActionResult Add()

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\Tranning.csproj": {}
+    "D:\\Mulie\\Sem6\\ASM_Tranning\\Tranning\\Tranning.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\Tranning.csproj": {
+    "D:\\Mulie\\Sem6\\ASM_Tranning\\Tranning\\Tranning.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\Tranning.csproj",
+        "projectUniqueName": "D:\\Mulie\\Sem6\\ASM_Tranning\\Tranning\\Tranning.csproj",
         "projectName": "Tranning",
-        "projectPath": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\Tranning.csproj",
-        "packagesPath": "C:\\Users\\ducph\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\obj\\",
+        "projectPath": "D:\\Mulie\\Sem6\\ASM_Tranning\\Tranning\\Tranning.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\Mulie\\Sem6\\ASM_Tranning\\Tranning\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ducph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

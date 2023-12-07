@@ -9,93 +9,113 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Tranning
 build_property.RootNamespace = Tranning
-build_property.ProjectDir = C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\
+build_property.ProjectDir = D:\Mulie\Sem6\ASM_Tranning\Tranning\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning
+build_property.MSBuildProjectDirectory = D:\Mulie\Sem6\ASM_Tranning\Tranning
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Category/Add.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Category/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Category/Index.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Category/Update.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Category/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Contact/Index.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Contact/Money.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Contact/Money.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxNb25leS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Course/Add.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Course/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Course/Index.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Course/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Course/Update.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Course/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Home/AdminIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbkluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Home/Privacy.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Login/Index.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Home/TrainingStaffIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUcmFpbmluZ1N0YWZmSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Shared/Error.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Shared/_MainLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Shared/_MyLayout.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Shared/_MyLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NeUxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Shared/_TrainingStaffLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9UcmFpbmluZ1N0YWZmTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Topic/Add.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Topic/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Topic/Index.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Topic/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Topic/Update.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Topic/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/_ViewImports.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/User/TSAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxUU0FkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/User/TSIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxUU0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/User/TSUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxUU1VwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/_ViewStart.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ducph/OneDrive/Desktop/Tranning/Tranning/Tranning/Views/Shared/_Layout.cshtml]
+[D:/Mulie/Sem6/ASM_Tranning/Tranning/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-d0tw4ep0p2
