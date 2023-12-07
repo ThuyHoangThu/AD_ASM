@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SXA1wYqeEBtfu71gqNKUxuUEgb6Qhih2XabH847iVSo=",
+  "Hash": "YeIPi0taq97v3WFn6AO4FLzWyMLxPSEkN+ki9FSVsdU=",
   "Source": "Tranning",
   "BasePath": "_content/Tranning",
   "Mode": "Default",
@@ -5831,6 +5831,23 @@
       "OriginalItemSpec": "wwwroot\\uploads\\images\\2625dd78-95eb-4d1b-a1b7-7573b8601cb6-5.png"
     },
     {
+      "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\3002c789-1baa-46a4-bee6-e49ab92cb390-5.png",
+      "SourceId": "Tranning",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\",
+      "BasePath": "_content/Tranning",
+      "RelativePath": "uploads/images/3002c789-1baa-46a4-bee6-e49ab92cb390-5.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\3002c789-1baa-46a4-bee6-e49ab92cb390-5.png"
+    },
+    {
       "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\344b6262-72d3-45b3-b04b-6c18154fd819-8c56de959cd76b8932c6.jpg",
       "SourceId": "Tranning",
       "SourceType": "Discovered",
@@ -5865,6 +5882,40 @@
       "OriginalItemSpec": "wwwroot\\uploads\\images\\3a6dd03e-13bd-4cd4-838e-ce65f0f89f3b-81587674_109538533910535_5605031401880551424_n.jpg"
     },
     {
+      "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\4c75b06a-25b3-416a-b6c0-abcd35e204ed-401512714_881400793567111_5303671807469235455_n.jpg",
+      "SourceId": "Tranning",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\",
+      "BasePath": "_content/Tranning",
+      "RelativePath": "uploads/images/4c75b06a-25b3-416a-b6c0-abcd35e204ed-401512714_881400793567111_5303671807469235455_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\4c75b06a-25b3-416a-b6c0-abcd35e204ed-401512714_881400793567111_5303671807469235455_n.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\4ca7ccd8-4772-4d02-ac89-62c2a5871099-401512714_881400793567111_5303671807469235455_n.jpg",
+      "SourceId": "Tranning",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\",
+      "BasePath": "_content/Tranning",
+      "RelativePath": "uploads/images/4ca7ccd8-4772-4d02-ac89-62c2a5871099-401512714_881400793567111_5303671807469235455_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\4ca7ccd8-4772-4d02-ac89-62c2a5871099-401512714_881400793567111_5303671807469235455_n.jpg"
+    },
+    {
       "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\52213c13-7087-4a82-9ec8-67f69edc74b8-81587674_109538533910535_5605031401880551424_n.jpg",
       "SourceId": "Tranning",
       "SourceType": "Discovered",
@@ -5897,6 +5948,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\images\\5a5fb74d-958f-4db8-971e-71f98229f4e8-1620_1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\6686d6a6-8166-48ca-b9aa-d5a749635d2a-5.png",
+      "SourceId": "Tranning",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\",
+      "BasePath": "_content/Tranning",
+      "RelativePath": "uploads/images/6686d6a6-8166-48ca-b9aa-d5a749635d2a-5.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\6686d6a6-8166-48ca-b9aa-d5a749635d2a-5.png"
     },
     {
       "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\6f0dda6a-7cce-40c0-b8f4-0e950b31ee99-91316705_2826932030767599_4384472391519043584_n.jpg",
@@ -6018,6 +6086,23 @@
       "OriginalItemSpec": "wwwroot\\uploads\\images\\9608cf9a-c8b9-478b-8ac7-98ce4b222a19-8c56de959cd76b8932c6.jpg"
     },
     {
+      "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\a66ec8d1-0060-4773-9595-4b42995b2897-401512714_881400793567111_5303671807469235455_n.jpg",
+      "SourceId": "Tranning",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\",
+      "BasePath": "_content/Tranning",
+      "RelativePath": "uploads/images/a66ec8d1-0060-4773-9595-4b42995b2897-401512714_881400793567111_5303671807469235455_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\a66ec8d1-0060-4773-9595-4b42995b2897-401512714_881400793567111_5303671807469235455_n.jpg"
+    },
+    {
       "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\b1cf8c21-ae8e-4d1c-94e2-9558f1a798f5-81587674_109538533910535_5605031401880551424_n.jpg",
       "SourceId": "Tranning",
       "SourceType": "Discovered",
@@ -6033,6 +6118,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\images\\b1cf8c21-ae8e-4d1c-94e2-9558f1a798f5-81587674_109538533910535_5605031401880551424_n.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\b8940612-7a79-4d06-9d0f-bad2eb829c8e-401512714_881400793567111_5303671807469235455_n.jpg",
+      "SourceId": "Tranning",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\",
+      "BasePath": "_content/Tranning",
+      "RelativePath": "uploads/images/b8940612-7a79-4d06-9d0f-bad2eb829c8e-401512714_881400793567111_5303671807469235455_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\b8940612-7a79-4d06-9d0f-bad2eb829c8e-401512714_881400793567111_5303671807469235455_n.jpg"
     },
     {
       "Identity": "C:\\Users\\ducph\\OneDrive\\Desktop\\Tranning\\Tranning\\Tranning\\wwwroot\\uploads\\images\\d0779e00-c4bc-41f1-9f76-6bddbcdcba7e-5.png",

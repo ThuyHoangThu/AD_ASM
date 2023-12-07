@@ -148,3 +148,9 @@ C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\obj\Debug\net7.0\refi
 C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\obj\Debug\net7.0\Tranning.pdb
 C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\obj\Debug\net7.0\Tranning.genruntimeconfig.cache
 C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\obj\Debug\net7.0\ref\Tranning.dll
+C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\bin\Debug\net7.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\ducph\OneDrive\Desktop\Tranning\Tranning\Tranning\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll

@@ -5,11 +5,11 @@ using Tranning.Models;
 
 namespace Tranning.Controllers
 {
-    public class CourseController : Controller
+    public class TopicController : Controller
     {
         private readonly TranningDBContext _dbContext;
 
-        public CourseController(TranningDBContext context)
+        public TopicController(TranningDBContext context)
         {
             _dbContext = context;
         }
@@ -17,89 +17,94 @@ namespace Tranning.Controllers
         [HttpGet]
         public IActionResult Index(string SearchString)
         {
-            CourseModel courseModel = new CourseModel();
-            courseModel.CourseDetailLists = new List<CourseDetail>();
+            TopicModel topicModel = new TopicModel();
+            topicModel.TopicDetailLists = new List<TopicDetail>();
 
-            var data = from m in _dbContext.Courses select m;
+            var data = from m in _dbContext.Topic select m;
 
             data = data.Where(m => m.deleted_at == null);
-            if (!string.IsNullOrEmpty(SearchString))
-            {
-                data = data.Where(m => m.name.Contains(SearchString) || m.description.Contains(SearchString));
-            }
-            data.ToList();
+            //if (!string.IsNullOrEmpty(SearchString))
+            //{
+            //    data = data.Where(m => m.name.Contains(SearchString) || m.description.Contains(SearchString));
+            //}
+            ////data.ToList();
 
-            foreach (var item in data)
-            {
-                courseModel.CourseDetailLists.Add(new CourseDetail
-                {
-                    id = item.id,
-                    category_id = item.category_id, 
-                    name = item.name,
-                    description = item.description,
-                    avatar = item.avatar,
-                    status = item.status,
-                    start_date = item.start_date,
-                    end_date = item.end_date,
-                    created_at = item.created_at,
-                    updated_at = item.updated_at
-                });
-            }
+            //foreach (var item in data)
+            //{
+            //    topicModel.TopicDetailLists.Add(new TopicDetail
+            //    {
+            //        id = item.id,
+            //        course_id = item.course_id,
+            //        name = item.name,
+            //        description = item.description,
+            //        videos = item.videos,
+            //        status = item.status,
+            //        created_at = item.created_at,
+            //        updated_at = item.updated_at
+            //    });
+            //}
             ViewData["CurrentFilter"] = SearchString;
-            return View(courseModel);
+            return View(topicModel);
         }
 
         [HttpGet]
         public IActionResult Add()
         {
-            CourseDetail course = new CourseDetail();
+            TopicDetail topic = new TopicDetail();
             var categoryList = _dbContext.Categories
                 .Where(m => m.deleted_at == null)
                 .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
             ViewBag.Stores = categoryList;
-            return View(course);
+            return View(topic);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Add(CourseDetail course, IFormFile Photo)
+        public async Task<IActionResult> Add(TopicDetail topic, IFormFile Photo)
         {
-
             if (ModelState.IsValid)
             {
                 try
                 {
                     string uniqueFileName = UploadFile(Photo);
-                    var courseData = new Course()
+                    var topicData = new Topic()
                     {
-                        name = course.name,
-                        description = course.description,
-                        category_id = course.category_id,
-                        start_date = course.start_date,
-                        end_date = course.end_date,
-                        status = course.status,
-                        avatar = uniqueFileName,
+                        name = topic.name,
+                        description = topic.description,
+                        course_id = topic.course_id,
+                        status = topic.status,
+                        videos = uniqueFileName,
                         created_at = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
                     };
-                
-                    _dbContext.Courses.Add(courseData);
+
+                    _dbContext.Topic.Add(topicData);
                     _dbContext.SaveChanges(true);
                     TempData["saveStatus"] = true;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     TempData["saveStatus"] = false;
+                    // Log the exception for debugging purposes
+                    Console.WriteLine($"Error adding topic: {ex.Message}");
+                    return RedirectToAction(nameof(ErrorPage), new { errorMessage = ex.Message });
                 }
-                return RedirectToAction(nameof(CourseController.Index), "Course");
+                return RedirectToAction(nameof(CategoryController.Index), "Topic");
             }
 
             var categoryList = _dbContext.Categories
-              .Where(m => m.deleted_at == null)
-              .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
+                .Where(m => m.deleted_at == null)
+                .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
             ViewBag.Stores = categoryList;
             Console.WriteLine(ModelState.IsValid);
-            return View(course);
+            return View(topic);
         }
+
+        public IActionResult ErrorPage(string errorMessage)
+        {
+            ViewBag.ErrorMessage = errorMessage;
+            return View();
+        }
+
 
         private string UploadFile(IFormFile file)
         {
@@ -147,7 +152,7 @@ namespace Tranning.Controllers
                 TempData["DeleteStatus"] = false;
                 //return Ok(ex.Message);
             }
-            return RedirectToAction(nameof(CategoryController.Index), "Course");
+            return RedirectToAction(nameof(CategoryController.Index), "Topic");
         }
         [HttpGet]
         public IActionResult Update(int id = 0)
@@ -167,16 +172,16 @@ namespace Tranning.Controllers
             return View(course);
         }
         [HttpPost]
-        public IActionResult Update(CourseDetail course, IFormFile Photo)
+        public IActionResult Update(TopicDetail topic, IFormFile Photo)
         {
             try
             {
-                var data = _dbContext.Courses.Where(m => m.id == course.id).FirstOrDefault();
+                var data = _dbContext.Courses.Where(m => m.id == topic.id).FirstOrDefault();
                 if (data != null)
                 {
-                    data.name = course.name;
-                    data.description = course.description;
-                    data.status = course.status;
+                    data.name = topic.name;
+                    data.description = topic.description;
+                    data.status = topic.status;
                     data.updated_at = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     if (Photo != null)
                     {
@@ -196,7 +201,7 @@ namespace Tranning.Controllers
             {
                 TempData["UpdateStatus"] = false;
             }
-            return RedirectToAction(nameof(CategoryController.Index), "Course");
+            return RedirectToAction(nameof(CategoryController.Index), "Topic");
         }
     }
 }
