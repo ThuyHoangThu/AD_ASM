@@ -14,7 +14,7 @@
             List Training Staff
         </h3>
         <a class="btn btn-primary btn-sm" href="@Url.Action("TSAdd","User")"> Add Users </a>
-        <form asp-action="Index" method="get">
+        <form asp-action="TSIndex" method="get">
             <div class="form-actions no-color">
                 <p class="mb-0">
                     Find by name : <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />

@@ -43,8 +43,7 @@ namespace Tranning.Controllers
                     start_date = item.start_date,
                     end_date = item.end_date,
                     created_at = item.created_at,
-                    updated_at = item.updated_at,
-                    categoryName = item.Category?.name // Assuming your Category model has a 'name' property
+                    updated_at = item.updated_at
                 });
             }
 
