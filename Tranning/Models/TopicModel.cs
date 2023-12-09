@@ -18,8 +18,6 @@ namespace Tranning.Models
         [Required(ErrorMessage = "Please enter the course ID.")]
         public int course_id { get; set; }
 
-        public int? trainer_id { get; set; }
-
         public string name { get; set; }
         public string? description { get; set; }
         public string? videos { get; set; }

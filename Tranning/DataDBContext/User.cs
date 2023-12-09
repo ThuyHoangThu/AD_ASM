@@ -67,6 +67,7 @@ namespace Tranning.DataDBContext
         [Column("department", TypeName = "Varchar(50)"), AllowNull]
         public string? department { get; set; }
 
-
+        public virtual ICollection<TraineeCourse> TraineeCourses { get; set; }
+        public virtual ICollection<TrainerTopic> TrainerTopics { get; set; }
     }
 }

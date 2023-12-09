@@ -43,8 +43,7 @@ namespace Tranning.Controllers
                     start_date = item.start_date,
                     end_date = item.end_date,
                     created_at = item.created_at,
-                    updated_at = item.updated_at,
-                    trainer_id = item.trainer_id
+                    updated_at = item.updated_at
                 });
             }
 
@@ -61,10 +60,7 @@ namespace Tranning.Controllers
                 .Where(m => m.deleted_at == null)
                 .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
             ViewBag.Stores = categoryList;
-            var userList = _dbContext.Users
-                .Where(m => m.deleted_at == null && m.role_id == 3)
-                .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.full_name }).ToList();
-            ViewBag.Stores1 = userList;
+       
             return View(course);
         }
 
@@ -86,7 +82,6 @@ namespace Tranning.Controllers
                         start_date = course.start_date,
                         end_date = course.end_date,
                         status = course.status,
-                        trainer_id = course.trainer_id,
                         avatar = uniqueFileName,
                         created_at = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
                     };
@@ -107,11 +102,6 @@ namespace Tranning.Controllers
               .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
             ViewBag.Stores = categoryList;
 
-            var userList = _dbContext.Users
-            .Where(m => m.deleted_at == null && m.role_id == 3)
-            .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.full_name })
-            .ToList();
-            ViewBag.Stores1 = userList;
 
             Console.WriteLine(ModelState.IsValid);
             return View(course);
@@ -177,7 +167,6 @@ namespace Tranning.Controllers
                 course.description = data.description;
                 course.status = data.status;
                 course.avatar = data.avatar;
-                course.trainer_id = data.trainer_id;
             }
             var categoryList = _dbContext.Categories.Where(m => m.deleted_at == null).Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
             ViewBag.Stores = categoryList;
@@ -198,7 +187,6 @@ namespace Tranning.Controllers
                     data.name = course.name;
                     data.description = course.description;
                     data.status = course.status;
-                    data.trainer_id = course.trainer_id;
                     data.updated_at = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     if (Photo != null)
                     {
@@ -249,8 +237,7 @@ namespace Tranning.Controllers
                     start_date = item.start_date,
                     end_date = item.end_date,
                     created_at = item.created_at,
-                    updated_at = item.updated_at,
-                    trainer_id = item.trainer_id
+                    updated_at = item.updated_at
                 });
             }
 

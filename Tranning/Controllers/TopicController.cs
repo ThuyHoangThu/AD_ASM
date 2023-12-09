@@ -38,8 +38,7 @@ namespace Tranning.Controllers
                     attach_file = item.attach_file,
                     documents = item.documents,
                     created_at = item.created_at,
-                    updated_at = item.updated_at,
-                    trainer_id = item.trainer_id
+                    updated_at = item.updated_at
                 })
                 .ToList();
 
@@ -71,8 +70,7 @@ namespace Tranning.Controllers
                     attach_file = item.attach_file,
                     documents = item.documents,
                     created_at = item.created_at,
-                    updated_at = item.updated_at,
-                    trainer_id = item.trainer_id
+                    updated_at = item.updated_at
                 })
                 .ToList();
 
@@ -120,7 +118,6 @@ namespace Tranning.Controllers
                             status = topic.status,
                             documents = topic.documents,
                             attach_file = file,
-                            trainer_id = topic.trainer_id,
                             created_at = DateTime.Now
                         };
 
@@ -275,8 +272,7 @@ namespace Tranning.Controllers
                     course_id = data.course_id,
                     name = data.name,
                     description = data.description,
-                    status = data.status,
-                    trainer_id = data.trainer_id,
+                    status = data.status
                     // Map other properties as needed
                 };
 
@@ -304,7 +300,6 @@ namespace Tranning.Controllers
                         data.name = topic.name;
                         data.description = topic.description;
                         data.status = topic.status;
-                        data.trainer_id = topic.trainer_id;
 
                         // Update the file fields if a new file is provided
                         if (topic.file != null)

@@ -11,9 +11,7 @@ namespace Tranning.DataDBContext
 
         [ForeignKey("category_id")]
         public int category_id { get; set; }
-        [ForeignKey("category_id"), AllowNull]
-        public int? trainer_id { get; set; }
-
+        
         [Column("name", TypeName = "Varchar(50)"), Required]
         public string name { get; set; }
 
@@ -42,5 +40,8 @@ namespace Tranning.DataDBContext
         [AllowNull]
         public DateTime? deleted_at { get; set; }
 
+        public virtual ICollection<TraineeCourse> TraineeCourses { get; set; }
+
+        
     }
 }

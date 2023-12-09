@@ -18,7 +18,7 @@ namespace Tranning.Models
 
         [Required(ErrorMessage = "Enter name, please")]
         public string name { get; set; }
-        public int? trainer_id { get; set; }
+
 
         public string? description { get; set; }
 
