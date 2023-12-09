@@ -21,7 +21,7 @@ namespace Tranning.Controllers
             CourseModel courseModel = new CourseModel();
             courseModel.CourseDetailLists = new List<CourseDetail>();
 
-            var data = _dbContext.Courses.Include(c => c.Category).Where(m => m.deleted_at == null);
+            var data = _dbContext.Courses.Where(m => m.deleted_at == null);
 
             if (!string.IsNullOrEmpty(SearchString))
             {
@@ -43,7 +43,8 @@ namespace Tranning.Controllers
                     start_date = item.start_date,
                     end_date = item.end_date,
                     created_at = item.created_at,
-                    updated_at = item.updated_at
+                    updated_at = item.updated_at,
+                    trainer_id = item.trainer_id
                 });
             }
 
@@ -60,6 +61,10 @@ namespace Tranning.Controllers
                 .Where(m => m.deleted_at == null)
                 .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
             ViewBag.Stores = categoryList;
+            var userList = _dbContext.Users
+                .Where(m => m.deleted_at == null && m.role_id == 3)
+                .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.full_name }).ToList();
+            ViewBag.Stores1 = userList;
             return View(course);
         }
 
@@ -81,6 +86,7 @@ namespace Tranning.Controllers
                         start_date = course.start_date,
                         end_date = course.end_date,
                         status = course.status,
+                        trainer_id = course.trainer_id,
                         avatar = uniqueFileName,
                         created_at = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
                     };
@@ -100,6 +106,13 @@ namespace Tranning.Controllers
               .Where(m => m.deleted_at == null)
               .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
             ViewBag.Stores = categoryList;
+
+            var userList = _dbContext.Users
+            .Where(m => m.deleted_at == null && m.role_id == 3)
+            .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.full_name })
+            .ToList();
+            ViewBag.Stores1 = userList;
+
             Console.WriteLine(ModelState.IsValid);
             return View(course);
         }
@@ -164,9 +177,14 @@ namespace Tranning.Controllers
                 course.description = data.description;
                 course.status = data.status;
                 course.avatar = data.avatar;
+                course.trainer_id = data.trainer_id;
             }
             var categoryList = _dbContext.Categories.Where(m => m.deleted_at == null).Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
             ViewBag.Stores = categoryList;
+            var userList = _dbContext.Users
+                .Where(m => m.deleted_at == null && m.role_id == 3)
+                .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.full_name }).ToList();
+            ViewBag.Stores1 = userList;
             return View(course);
         }
         [HttpPost]
@@ -180,6 +198,7 @@ namespace Tranning.Controllers
                     data.name = course.name;
                     data.description = course.description;
                     data.status = course.status;
+                    data.trainer_id = course.trainer_id;
                     data.updated_at = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     if (Photo != null)
                     {
@@ -200,6 +219,43 @@ namespace Tranning.Controllers
                 TempData["UpdateStatus"] = false;
             }
             return RedirectToAction(nameof(CategoryController.Index), "Course");
+        }
+
+        [HttpGet]
+        public IActionResult TrainerIndex(string SearchString)
+        {
+            CourseModel courseModel = new CourseModel();
+            courseModel.CourseDetailLists = new List<CourseDetail>();
+
+            var data = _dbContext.Courses.Where(m => m.deleted_at == null);
+
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                data = data.Where(m => m.name.Contains(SearchString) || m.description.Contains(SearchString));
+            }
+
+            var courses = data.ToList();
+
+            foreach (var item in courses)
+            {
+                courseModel.CourseDetailLists.Add(new CourseDetail
+                {
+                    id = item.id,
+                    category_id = item.category_id,
+                    name = item.name,
+                    description = item.description,
+                    avatar = item.avatar,
+                    status = item.status,
+                    start_date = item.start_date,
+                    end_date = item.end_date,
+                    created_at = item.created_at,
+                    updated_at = item.updated_at,
+                    trainer_id = item.trainer_id
+                });
+            }
+
+            ViewData["CurrentFilter"] = SearchString;
+            return View(courseModel);
         }
     }
 }

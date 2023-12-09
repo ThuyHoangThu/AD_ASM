@@ -195,5 +195,39 @@ namespace Tranning.Controllers
             }
             return uniqueFileName;
         }
+
+        [HttpGet]
+        public IActionResult TrainerIndex(string SearchString)
+        {
+
+            CategoryModel categoryModel = new CategoryModel();
+            categoryModel.CategoryDetailLists = new List<CategoryDetail>();
+
+            var data = from m in _dbContext.Categories
+                       select m;
+
+            data = data.Where(m => m.deleted_at == null);
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                data = data.Where(m => m.name.Contains(SearchString) || m.description.Contains(SearchString));
+            }
+            data.ToList();
+
+            foreach (var item in data)
+            {
+                categoryModel.CategoryDetailLists.Add(new CategoryDetail
+                {
+                    id = item.id,
+                    name = item.name,
+                    description = item.description,
+                    icon = item.icon,
+                    status = item.status,
+                    created_at = item.created_at,
+                    updated_at = item.updated_at
+                });
+            }
+            ViewData["CurrentFilter"] = SearchString;
+            return View(categoryModel);
+        }
     }
 }

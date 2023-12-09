@@ -3386,11 +3386,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Mulie\\Sem6\\ASM_Tranning\\Tranning\\Tranning.csproj",
+      "projectUniqueName": "D:\\Mulie\\Sem6\\ASM_Trainning\\Tranning\\Tranning.csproj",
       "projectName": "Tranning",
-      "projectPath": "D:\\Mulie\\Sem6\\ASM_Tranning\\Tranning\\Tranning.csproj",
+      "projectPath": "D:\\Mulie\\Sem6\\ASM_Trainning\\Tranning\\Tranning.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\Mulie\\Sem6\\ASM_Tranning\\Tranning\\obj\\",
+      "outputPath": "D:\\Mulie\\Sem6\\ASM_Trainning\\Tranning\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

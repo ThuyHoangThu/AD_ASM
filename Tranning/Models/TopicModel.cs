@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
+using Microsoft.AspNetCore.Http;
 using Tranning.Validations;
 
 namespace Tranning.Models
@@ -9,40 +10,35 @@ namespace Tranning.Models
     {
         public List<TopicDetail> TopicDetailLists { get; set; }
     }
+
     public class TopicDetail
     {
         public int id { get; set; }
 
-        [Required(ErrorMessage = "Enter Course, please")]
+        [Required(ErrorMessage = "Please enter the course ID.")]
         public int course_id { get; set; }
 
-        [Required(ErrorMessage = "Enter name, please")]
         public string name { get; set; }
-
         public string? description { get; set; }
-
-        [Required(ErrorMessage = "Enter a valid YouTube video ID.")]
         public string? videos { get; set; }
-
+        public string? documents { get; set; }
         public string? attach_file { get; set; }
 
-        [Required(ErrorMessage = "Choose Status, please")]
+        [Required(ErrorMessage = "Please choose a file.")]
+        [AllowedExtensionFile(new string[] { ".doc", ".jpg", ".jpeg", ".gif" })]
+        [AllowedSizeFile(8 * 1024 * 1024)]
+        public IFormFile file { get; set; }
+
+        [Required(ErrorMessage = "Please choose a status.")]
         public string status { get; set; }
 
-        [Required(ErrorMessage = "Choose file, please")]
-        [AllowedExtensionFile(new string[] { ".png", ".jpg", ".jpeg" })]
-        [AllowedSizeFile(3 * 1024 * 1024)]
-        public IFormFile? Photo { get; set; }
-
-
+        [Required(ErrorMessage = "Please choose a file.")]
+        [AllowedExtensionFile(new string[] { ".png", ".jpg", ".jpeg", ".gif" })]
+        [AllowedSizeFile(4 * 1024 * 1024)]
+        public IFormFile photo { get; set; }
 
         public DateTime? created_at { get; set; }
-
         public DateTime? updated_at { get; set; }
-
         public DateTime? deleted_at { get; set; }
-
-
-
     }
 }

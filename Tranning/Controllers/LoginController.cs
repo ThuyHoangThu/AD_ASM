@@ -44,6 +44,11 @@ namespace Tranning.Controllers
                 return RedirectToAction(nameof(HomeController.TrainingStaffIndex), "Home");
             }
 
+            else if (model.RoleID == "3")
+            {
+                return RedirectToAction(nameof(HomeController.TrainerIndex), "Home");
+            }
+
             return RedirectToAction(nameof(HomeController.DefaultAction), "Home");
 
         }

@@ -5424,6 +5424,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\1b7a44fb-bba3-4136-80bf-63bdbc000b02-91073226_2826935270767275_1885454002577997824_n.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\1dd84315-955b-4755-bb1c-7d7631e44a50-3.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Tranning</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Tranning</BasePath>
+      <RelativePath>uploads/images/1dd84315-955b-4755-bb1c-7d7631e44a50-3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\1dd84315-955b-4755-bb1c-7d7631e44a50-3.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\215f73a2-983f-45fc-ab80-f0697d6da983-8c56de959cd76b8932c6.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Tranning</SourceId>
@@ -5519,6 +5535,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\3002c789-1baa-46a4-bee6-e49ab92cb390-5.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\32ef2a1f-4131-4b13-907b-9228c52bbb8a-3.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Tranning</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Tranning</BasePath>
+      <RelativePath>uploads/images/32ef2a1f-4131-4b13-907b-9228c52bbb8a-3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\32ef2a1f-4131-4b13-907b-9228c52bbb8a-3.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\344b6262-72d3-45b3-b04b-6c18154fd819-8c56de959cd76b8932c6.jpg))">
       <SourceType>Package</SourceType>
@@ -5824,6 +5856,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\9608cf9a-c8b9-478b-8ac7-98ce4b222a19-8c56de959cd76b8932c6.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\a07b9d6c-460a-4a5e-a9fd-a703275ef756-Screenshot 2023-08-20 220047.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Tranning</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Tranning</BasePath>
+      <RelativePath>uploads/images/a07b9d6c-460a-4a5e-a9fd-a703275ef756-Screenshot 2023-08-20 220047.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\a07b9d6c-460a-4a5e-a9fd-a703275ef756-Screenshot 2023-08-20 220047.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\a66ec8d1-0060-4773-9595-4b42995b2897-401512714_881400793567111_5303671807469235455_n.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Tranning</SourceId>
@@ -5839,6 +5887,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\a66ec8d1-0060-4773-9595-4b42995b2897-401512714_881400793567111_5303671807469235455_n.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\a7e16a2c-574c-4210-999f-35bcd47711ea-3.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Tranning</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Tranning</BasePath>
+      <RelativePath>uploads/images/a7e16a2c-574c-4210-999f-35bcd47711ea-3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\a7e16a2c-574c-4210-999f-35bcd47711ea-3.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\b1cf8c21-ae8e-4d1c-94e2-9558f1a798f5-81587674_109538533910535_5605031401880551424_n.jpg))">
       <SourceType>Package</SourceType>
