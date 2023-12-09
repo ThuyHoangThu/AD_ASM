@@ -182,7 +182,7 @@ namespace Tranning.Controllers
             var categoryList = _dbContext.Categories.Where(m => m.deleted_at == null).Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
             ViewBag.Stores = categoryList;
             var userList = _dbContext.Users
-                .Where(m => m.deleted_at == null && m.role_id == 3)
+                .Where(m => m.deleted_at == null && m.role_id == 4)
                 .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.full_name }).ToList();
             ViewBag.Stores1 = userList;
             return View(course);

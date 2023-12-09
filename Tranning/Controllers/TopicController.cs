@@ -38,7 +38,8 @@ namespace Tranning.Controllers
                     attach_file = item.attach_file,
                     documents = item.documents,
                     created_at = item.created_at,
-                    updated_at = item.updated_at
+                    updated_at = item.updated_at,
+                    trainer_id = item.trainer_id
                 })
                 .ToList();
 
@@ -70,7 +71,8 @@ namespace Tranning.Controllers
                     attach_file = item.attach_file,
                     documents = item.documents,
                     created_at = item.created_at,
-                    updated_at = item.updated_at
+                    updated_at = item.updated_at,
+                    trainer_id = item.trainer_id
                 })
                 .ToList();
 
@@ -92,6 +94,7 @@ namespace Tranning.Controllers
         {
             TopicDetail topic = new TopicDetail();
             PopulateCategoryDropdown();
+            PopulateCategoryDropdown1();
             return View(topic);
         }
 
@@ -117,6 +120,7 @@ namespace Tranning.Controllers
                             status = topic.status,
                             documents = topic.documents,
                             attach_file = file,
+                            trainer_id = topic.trainer_id,
                             created_at = DateTime.Now
                         };
 
@@ -141,6 +145,7 @@ namespace Tranning.Controllers
                 }
 
                 PopulateCategoryDropdown();
+                PopulateCategoryDropdown1();
                 return View(topic);
             }
             catch (Exception ex)
@@ -199,6 +204,32 @@ namespace Tranning.Controllers
                 ViewBag.Stores = new List<SelectListItem>();
             }
         }
+
+        private void PopulateCategoryDropdown1()
+        {
+            try
+            {
+                var users = _dbContext.Users
+                    .Where(m => m.deleted_at == null && m.role_id == 3)
+                    .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.full_name })
+                    .ToList();
+
+                if (users != null)
+                {
+                    ViewBag.Stores1 = users;
+                }
+                else
+                {
+                    _logger.LogError("User is null");
+                    ViewBag.Stores1 = new List<SelectListItem>();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while populating category dropdown.");
+                ViewBag.Stores1 = new List<SelectListItem>();
+            }
+        }
         [HttpGet]
         public IActionResult Delete(int id = 0)
         {
@@ -235,6 +266,7 @@ namespace Tranning.Controllers
             {
                 // Set ViewBag.Stores to populate the dropdown in the view
                 PopulateCategoryDropdown();
+                PopulateCategoryDropdown1();
 
                 // Map the data to the TopicDetail model
                 var topic = new TopicDetail
@@ -244,6 +276,7 @@ namespace Tranning.Controllers
                     name = data.name,
                     description = data.description,
                     status = data.status,
+                    trainer_id = data.trainer_id,
                     // Map other properties as needed
                 };
 
@@ -271,6 +304,7 @@ namespace Tranning.Controllers
                         data.name = topic.name;
                         data.description = topic.description;
                         data.status = topic.status;
+                        data.trainer_id = topic.trainer_id;
 
                         // Update the file fields if a new file is provided
                         if (topic.file != null)
@@ -298,6 +332,7 @@ namespace Tranning.Controllers
 
                 // If ModelState is not valid, repopulate the dropdown and return to the view
                 PopulateCategoryDropdown();
+                PopulateCategoryDropdown1();
                 return View(topic);
             }
             catch (Exception ex)

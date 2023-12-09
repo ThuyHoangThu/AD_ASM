@@ -2,17 +2,18 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Course page";
+    ViewData["Title"] = "Trainee page";
     // co the code nhu trong controller
-    Layout = "~/Views/Shared/_TrainerLayout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
     bool statusAdd = Convert.ToBoolean(TempData["SaveStatus"]);
     bool statusUpdate = Convert.ToBoolean(TempData["UpdateStatus"]);
 }
 <div class="row">
     <div class="col-sm-12 col-md-12">
         <h3 class="display-6">
-            List Course
+            List Trainee
         </h3>
+        <a class="btn btn-primary btn-sm" href="@Url.Action("TraineeAdd","User")"> Add Users </a>
         <form asp-action="TrainerIndex" method="get">
             <div class="form-actions no-color">
                 <p class="mb-0">
@@ -50,11 +51,12 @@
             <thead class="text-center">
                 <tr>
                     <th>ID</th>
-                    <th>NAME</th>
-                    <th>CATEGORY</th>
-                    <th>TRAINEE</th>
-                    <th>AVATAR</th>
-                    <th>DESCRIPTION</th>
+                    <th>EXTRA CODE</th>
+                    <th>USERNAME</th>
+                    <th>FULL NAME</th>
+                    <th>EMAIL</th>
+                    <th>PHONE</th>
+                    <th>GENDER</th>
                     <th>STATUS</th>
                     <th>CREATED AT</th>
                     <th>UPDATED AT</th>
@@ -62,22 +64,25 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.CourseDetailLists)
+                @foreach (var item in Model.UserDetailLists)
                 {
                     <tr>
                         <td>@item.id</td>
-                        <td>@item.name</td>
-                        <td>@item.category_id</td>
-                        <td>@item.trainer_id</td>
-                        <td style="display: flex; justify-content: center; align-items: center;">
-                            <img width="50%" class="img-fluid" src="/uploads/images/@item.avatar" />
-                        </td>
-
-                        <td>@item.description</td>
+                        <td>@item.extra_code</td>
+                        <td>@item.username</td>
+                        <td>@item.full_name</td>
+                        <td>@item.email</td>
+                        <td>@item.phone</td>
+                        <td>@item.gender</td>
                         <td>@item.status</td>
                         <td>@item.created_at</td>
                         <td>@item.updated_at</td>
-
+                        <td>
+                            <a class="btn btn-info btn-sm" href="@Url.Action("TraineeUpdate","User", new {id = @item.id})">Edit</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="@Url.Action("TraineeDelete","User", new {id = @item.id})">Delete</a>
+                        </td>
                     </tr>
                 }
             </tbody>

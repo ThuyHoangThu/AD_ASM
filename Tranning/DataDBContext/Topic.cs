@@ -11,6 +11,8 @@ namespace Tranning.DataDBContext
 
         [ForeignKey("course_id")]
         public int course_id { get; set; }
+        [ForeignKey("trainer_id"), AllowNull]
+        public int? trainer_id { get; set; }
         [Column("name", TypeName = "Varchar(50)"), Required]
         public string name { get; set; }
 
