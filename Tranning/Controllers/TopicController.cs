@@ -29,11 +29,11 @@ namespace Tranning.Controllers
                 .Where(m => m.deleted_at == null)
                 .Join(
                     _dbContext.Courses,
-                    topic => topic.course_id,
+                    topic => topic.courseid,
                     course => course.id,
                     (topic, course) => new TopicDetail
                     {
-                        course_id = topic.course_id,
+                        courseid = topic.courseid,
                         courseName = course.name, // Add this line to include the course name
                         id = topic.id,
                         name = topic.name,
@@ -67,7 +67,7 @@ namespace Tranning.Controllers
                 .Where(m => m.deleted_at == null)
                 .Select(item => new TopicDetail
                 {
-                    course_id = item.course_id,
+                    courseid = item.courseid,
                     id = item.id,
                     name = item.name,
                     description = item.description,
@@ -118,7 +118,7 @@ namespace Tranning.Controllers
                         string DocumentName = await UploadDocuments(topic.document_file);
                         var topicData = new Topic()
                         {
-                            course_id = topic.course_id,
+                            courseid = topic.courseid,
                             name = topic.name,
                             description = topic.description,
                             videos = VideoFileName,
@@ -319,7 +319,7 @@ namespace Tranning.Controllers
                 var topic = new TopicDetail
                 {
                     id = data.id,
-                    course_id = data.course_id,
+                    courseid = data.courseid,
                     name = data.name,
                     description = data.description,
                     videos = data.videos,
@@ -355,7 +355,7 @@ namespace Tranning.Controllers
                         data.name = topic.name;
                         data.description = topic.description;
                         data.status = topic.status;
-                        data.course_id = topic.course_id;
+                        data.courseid = topic.courseid;
 
                         // Update the file fields if a new file is provided
                         if (topic.file != null)

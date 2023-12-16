@@ -9,8 +9,8 @@ namespace Tranning.DataDBContext
         [Key]
         public int id { get; set; }
 
-        [ForeignKey("course_id")]
-        public int course_id { get; set; }
+        [ForeignKey("courseid")]
+        public int courseid { get; set; }
 
 
         [Column("name", TypeName = "Varchar(50)"), Required]

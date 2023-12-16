@@ -18,20 +18,30 @@
                 <form enctype="multipart/form-data" asp-action="Update">
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
-
                             <div class="form-group">
-                                <label asp-for="topic_id">Topic</label>
-                                <select name="topicList" class="form-control" asp-items="@(new SelectList(ViewBag.Stores, "Value", "Text"))">
+                                <label asp-for="topicid">Course</label>
+                                <select asp-for="topicid" class="form-control" asp-items="@(new SelectList(ViewBag.Stores, "Value", "Text"))" id="topicDropdown">
                                 </select>
-                                <span class="text-danger" asp-validation-for="topic_id"></span>
+                                <span class="text-danger" asp-validation-for="topicid"></span>
                             </div>
+
+                            <script>
+                                // Set the selected option using JavaScript
+                                document.getElementById("topicDropdown").value = "@Model.topicid";
+                            </script>
+
+
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group">
-                                <label asp-for="trainer_id">Trainer</label>
-                                <select asp-for="trainer_id" class="form-control" asp-items="@(new SelectList(ViewBag.Stores1, "Value", "Text"))">
+                                <label asp-for="userid">Trainee</label>
+                                <select asp-for="userid" class="form-control" asp-items="@(new SelectList(ViewBag.Stores1, "Value", "Text"))" id="userDropdown">
                                 </select>
-                                <span class="text-danger" asp-validation-for="trainer_id"></span>
+                                <span class="text-danger" asp-validation-for="userid"></span>
+                                <script>
+                                    // Set the selected option using JavaScript
+                                    document.getElementById("userDropdown").value = "@Model.userid";
+                                </script>
                             </div>
                         </div>
 

@@ -21,10 +21,10 @@
                                 <span class="text-danger" asp-validation-for="name"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="course_id">Course</label>
-                                <select asp-for="course_id" class="form-control" asp-items="@(new SelectList(ViewBag.Stores, "Value", "Text"))">
+                                <label asp-for="courseid">Course</label>
+                                <select asp-for="courseid" class="form-control" asp-items="@(new SelectList(ViewBag.Stores, "Value", "Text"))">
                                 </select>
-                                <span class="text-danger" asp-validation-for="course_id"></span>
+                                <span class="text-danger" asp-validation-for="courseid"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="description">Description</label>

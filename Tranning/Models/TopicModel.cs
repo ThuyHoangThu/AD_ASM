@@ -16,7 +16,7 @@ namespace Tranning.Models
         public int id { get; set; }
 
         [Required(ErrorMessage = "Please enter the course ID.")]
-        public int course_id { get; set; }
+        public int courseid { get; set; }
 
         public string name { get; set; }
         public string? description { get; set; }

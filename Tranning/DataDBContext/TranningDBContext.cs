@@ -17,36 +17,36 @@ namespace Tranning.DataDBContext
 
         public DbSet<TrainerTopic> TrainerTopics { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<TraineeCourse>()
-                .HasKey(tc => new { tc.trainee_id, tc.course_id });
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<TraineeCourse>()
+        //        .HasKey(tc => new { tc.userid, tc.courseid });
 
-            modelBuilder.Entity<TraineeCourse>()
-                .HasOne(tc => tc.User)
-                .WithMany(t => t.TraineeCourses)
-                .HasForeignKey(tc => tc.trainee_id);
+        //    modelBuilder.Entity<TraineeCourse>()
+        //        .HasOne(tc => tc.User)
+        //        .WithMany(t => t.TraineeCourses)
+        //        .HasForeignKey(tc => tc.userid);
 
-            modelBuilder.Entity<TraineeCourse>()
-                .HasOne(tc => tc.Course)
-                .WithMany(c => c.TraineeCourses)
-                .HasForeignKey(tc => tc.course_id);
+        //    modelBuilder.Entity<TraineeCourse>()
+        //        .HasOne(tc => tc.Course)
+        //        .WithMany(c => c.TraineeCourses)
+        //        .HasForeignKey(tc => tc.courseid);
 
-            modelBuilder.Entity<TrainerTopic>()
-               .HasKey(tc => new { tc.trainer_id, tc.topic_id });
+        //    modelBuilder.Entity<TrainerTopic>()
+        //       .HasKey(tc => new { tc.userid, tc.topicid });
 
-            modelBuilder.Entity<TrainerTopic>()
-                .HasOne(tc => tc.User)
-                .WithMany(t => t.TrainerTopics)
-                .HasForeignKey(tc => tc.trainer_id);
+        //    modelBuilder.Entity<TrainerTopic>()
+        //        .HasOne(tc => tc.User)
+        //        .WithMany(t => t.TrainerTopics)
+        //        .HasForeignKey(tc => tc.userid);
 
-            modelBuilder.Entity<TrainerTopic>()
-                .HasOne(tc => tc.Topic)
-                .WithMany(c => c.TrainerTopics)
-                .HasForeignKey(tc => tc.topic_id);
+        //    modelBuilder.Entity<TrainerTopic>()
+        //        .HasOne(tc => tc.Topic)
+        //        .WithMany(c => c.TrainerTopics)
+        //        .HasForeignKey(tc => tc.topicid);
 
-            base.OnModelCreating(modelBuilder);
-        }
+        //    base.OnModelCreating(modelBuilder);
+        //}
 
 
 

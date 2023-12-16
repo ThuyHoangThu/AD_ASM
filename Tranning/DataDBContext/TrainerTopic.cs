@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Tranning.DataDBContext
 {
@@ -6,11 +7,12 @@ namespace Tranning.DataDBContext
     {
       
         public int id { get; set; }
-        public int topic_id { get; set; }
-        public int trainer_id { get; set; }
+        [ForeignKey("topicid")]
+        public int topicid { get; set; }
+        [ForeignKey("userid")]
+        public int userid { get; set; }
 
-        public virtual Topic Topic { get; set; }
-        public virtual User User { get; set; }
+
 
 
 

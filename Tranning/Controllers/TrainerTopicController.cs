@@ -21,38 +21,28 @@ namespace Tranning.Controllers
             trainertopicModel.TrainerTopicDetailLists = new List<TrainerTopicDetail>();
 
             var data = _dbContext.TrainerTopics
-                .Where(m => m.deleted_at == null)
-                .Join(
-                    _dbContext.Users,
-                    trainerTopic => trainerTopic.trainer_id,
-                    trainer => trainer.id,
-                    (trainerTopic, trainer) => new
-                    {
-                        TrainerTopic = trainerTopic,
-                        TrainerName = trainer.full_name
-                    })
-                .Join(
-                    _dbContext.Topics,
-                    result => result.TrainerTopic.topic_id,
-                    topic => topic.id,
-                    (result, topic) => new
-                    {
-                        result.TrainerTopic,
-                        result.TrainerName,
-                        TopicName = topic.name
-                    })
-                .ToList();
+                           .Where(m => m.deleted_at == null)
+                           .ToList();
 
             foreach (var item in data)
             {
+                var trainerList = _dbContext.Users
+                                        .Where(m => m.id == item.userid && m.deleted_at == null)
+                                        .FirstOrDefault();
+                var topicList = _dbContext.Topics
+                                        .Where(m => m.id == item.topicid && m.deleted_at == null)
+                                        .FirstOrDefault();
+
+
                 trainertopicModel.TrainerTopicDetailLists.Add(new TrainerTopicDetail
                 {
-                    topic_id = item.TrainerTopic.topic_id,
-                    trainer_id = item.TrainerTopic.trainer_id,
-                    trainerName = item.TrainerName,
-                    topicName = item.TopicName,
-                    created_at = item.TrainerTopic.created_at,
-                    updated_at = item.TrainerTopic.updated_at
+                    id = item.id,
+                    topicid = item.topicid,
+                    topicName = topicList?.name, // Use ?. to avoid null reference exception
+                    userid = item.userid,
+                    trainerName = trainerList?.full_name, // Use ?. to avoid null reference exception
+                    created_at = item.created_at,
+                    updated_at = item.updated_at
                 });
             }
 
@@ -89,8 +79,8 @@ namespace Tranning.Controllers
                 {
                     var trainertopicData = new TrainerTopic()
                     {
-                        topic_id = trainertopic.topic_id,
-                        trainer_id = trainertopic.trainer_id,
+                        topicid = trainertopic.topicid,
+                        userid = trainertopic.userid,
                         created_at = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
                     };
 
@@ -163,26 +153,31 @@ namespace Tranning.Controllers
         public IActionResult Update(int id = 0)
         {
             TrainerTopicDetail trainertopic = new TrainerTopicDetail();
-            var data = _dbContext.TrainerTopics.Where(m => m.id == trainertopic.id).FirstOrDefault();
+            var data = _dbContext.TrainerTopics.Where(m => m.id == id).FirstOrDefault();
+
             if (data != null)
             {
                 trainertopic.id = data.id;
-                trainertopic.topic_id = data.topic_id;
-                trainertopic.trainer_id = data.trainer_id;
+                trainertopic.userid = data.userid;
+                trainertopic.topicid = data.topicid;
             }
 
             var topicList = _dbContext.Topics
-                  .Where(m => m.deleted_at == null)
-                  .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
-            ViewBag.Stores = topicList;
+              .Where(m => m.deleted_at == null)
+              .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
+
+            ViewBag.Stores = new SelectList(topicList, "Value", "Text", data?.topicid);
 
             var trainerList = _dbContext.Users
               .Where(m => m.deleted_at == null && m.role_id == 3)
               .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.full_name }).ToList();
-            ViewBag.Stores1 = trainerList;
+
+            ViewBag.Stores1 = new SelectList(trainerList, "Value", "Text", data?.userid);
 
             return View(trainertopic);
         }
+
+
         [HttpPost]
         public IActionResult Update(TrainerTopicDetail trainertopic)
         {
@@ -193,8 +188,9 @@ namespace Tranning.Controllers
 
                 if (data != null)
                 {
-                    data.topic_id = trainertopic.topic_id;
-                    data.trainer_id = trainertopic.trainer_id;
+                  
+                    data.topicid = trainertopic.topicid;
+                    data.userid = trainertopic.userid;
                     data.updated_at = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     _dbContext.SaveChanges(true);
                     TempData["UpdateStatus"] = true;
@@ -202,12 +198,16 @@ namespace Tranning.Controllers
                 }
                 else
                 {
+                    Console.WriteLine(trainertopic.id.ToString());
                     TempData["UpdateStatus"] = false;
                 }
             }
-            catch
+            catch (Exception ex)
             {
+
+                Console.WriteLine(trainertopic.id.ToString());
                 TempData["UpdateStatus"] = false;
+                return Ok(new { Status = "Error", Message = ex.Message });
             }
             return RedirectToAction(nameof(TrainerTopicController.Index), "TrainerTopic");
 

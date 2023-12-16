@@ -12,10 +12,11 @@ namespace Tranning.Models
         [Key]
         public int id { get; set; } 
         [Required(ErrorMessage = "Choose Topic, please")]
-        public int topic_id { get; set; }
-        [Required(ErrorMessage = "Choose Trainer, please")]
+        
+        public int topicid { get; set; }
+        
 
-        public int trainer_id { get; set; }
+        public int userid { get; set; }
 
         public string? trainerName { get; set; }
         public string? topicName { get; set; }

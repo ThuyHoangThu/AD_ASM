@@ -19,22 +19,30 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group">
-                                <label asp-for="course_id">Course</label>
-                                <select asp-for="course_id" class="form-control" asp-items="@(new SelectList(ViewBag.Stores, "Value", "Text"))">
+                                <label asp-for="courseid">Course</label>
+                                <select asp-for="courseid" class="form-control" asp-items="@(new SelectList(ViewBag.Stores, "Value", "Text"))" id="courseDropdown">
+                                    
                                 </select>
-                                <span class="text-danger" asp-validation-for="course_id"></span>
+                                <span class="text-danger" asp-validation-for="courseid"></span>
                             </div>
 
-
+                            <script>
+                                // Set the selected option using JavaScript
+                                document.getElementById("courseDropdown").value = "@Model.courseid";
+                            </script>
 
 
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group">
-                                <label asp-for="trainee_id">Trainee</label>
-                                <select asp-for="trainee_id" class="form-control" asp-items="@(new SelectList(ViewBag.Stores1, "Value", "Text"))">
+                                <label asp-for="userid">Trainee</label>
+                                <select asp-for="userid" class="form-control" asp-items="@(new SelectList(ViewBag.Stores1, "Value", "Text"))" id="userDropdown">
                                 </select>
-                                <span class="text-danger" asp-validation-for="trainee_id"></span>
+                                <span class="text-danger" asp-validation-for="userid"></span>
+                                <script>
+                                    // Set the selected option using JavaScript
+                                    document.getElementById("userDropdown").value = "@Model.userid";
+                                </script>
                             </div>
                         </div>
 

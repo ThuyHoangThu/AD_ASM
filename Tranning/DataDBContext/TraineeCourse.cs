@@ -8,13 +8,10 @@ namespace Tranning.DataDBContext
     {
         [Key]
         public int id { get; set; }
-        public int course_id { get; set; }
-        public int trainee_id { get; set; }
-
-        public virtual Course Course { get; set; }
-        public virtual User User { get; set; }
-
-
+        [ForeignKey("courseid")]
+        public int courseid { get; set; }
+        [ForeignKey("userid")]
+        public int userid { get; set; }
 
         [AllowNull]
         public DateTime? created_at { get; set; }

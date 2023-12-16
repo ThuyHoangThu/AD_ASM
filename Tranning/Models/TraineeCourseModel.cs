@@ -14,10 +14,10 @@ namespace Tranning.Models
         [Key]
         public int id { get; set; }
         [Required(ErrorMessage = "Choose Course, please")]
-        public int course_id { get; set; }
+        public int courseid { get; set; }
         [Required(ErrorMessage = "Choose Trainee, please")]
 
-        public int trainee_id { get; set; }
+        public int userid { get; set; }
         public string? traineeName { get; set; }
         public string? courseName { get; set; }
 
