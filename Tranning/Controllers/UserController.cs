@@ -15,48 +15,39 @@ namespace Tranning.Controllers
         [HttpGet]
         public IActionResult TSIndex(string SearchString)
         {
+
             UserModel userModel = new UserModel();
             userModel.UserDetailLists = new List<UserDetail>();
 
-            var data = _dbContext.Users
-                .Where(m => m.deleted_at == null && m.role_id == 2)
-                .Join(
-                    _dbContext.Roles,
-                    user => user.role_id,
-                    role => role.id,
-                    (user, role) => new
-                    {
-                        User = user,
-                        RoleName = role.description
-                    })
-                .ToList();
+            var data = from m in _dbContext.Users
+                       select m;
 
-            // Apply additional search filter if needed
+            data = data.Where(m => m.deleted_at == null && m.role_id == 2);
             if (!string.IsNullOrEmpty(SearchString))
             {
-                data = data.Where(item => item.User.full_name.Contains(SearchString) || item.User.phone.Contains(SearchString)).ToList();
+                data = data.Where(m => m.full_name.Contains(SearchString) || m.phone.Contains(SearchString));
             }
+
+            data.ToList();
 
             foreach (var item in data)
             {
                 userModel.UserDetailLists.Add(new UserDetail
                 {
-                    id = item.User.id,
-                    role_id = item.User.role_id,
-                    roleName = item.RoleName,
-                    extra_code = item.User.extra_code,
-                    username = item.User.username,
-                    password = item.User.password,
-                    email = item.User.email,
-                    phone = item.User.phone,
-                    gender = item.User.gender,
-                    status = item.User.status,
-                    full_name = item.User.full_name,
-                    created_at = item.User.created_at,
-                    updated_at = item.User.updated_at
+                    id = item.id,
+                    role_id = item.role_id,
+                    extra_code = item.extra_code,
+                    username = item.username,
+                    password = item.password,
+                    email = item.email,
+                    phone = item.phone,
+                    gender = item.gender,
+                    status = item.status,
+                    full_name = item.full_name,
+                    created_at = item.created_at,
+                    updated_at = item.updated_at
                 });
             }
-
             ViewData["CurrentFilter"] = SearchString;
             return View(userModel);
         }

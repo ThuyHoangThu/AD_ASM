@@ -53,6 +53,8 @@
                     <th>TOPIC NAME</th>
                     <th>TRAINER NAME</th>
                     <th>CREATED AT</th>
+                    <th>UPDATE AT</th>
+                    <th>ACTION</th>
                 </tr>
             </thead>
             <tbody class="text-center">
@@ -62,6 +64,11 @@
                         <td>@item.topicName</td>
                         <td>@item.trainerName</td>
                         <td>@item.created_at</td>
+                        <td>@item.updated_at</td>
+                        <td><a class="btn btn-danger btn-sm" href="@Url.Action("Delete","TrainerTopic", new { id = @item.id })">Delete</a></td>
+                        <td>
+                            <a class="btn btn-info btn-sm" href="@Url.Action("Update","TrainerTopic", new { id = @item.id })">Edit</a>
+                        </td>
                         
                     </tr>
                 }

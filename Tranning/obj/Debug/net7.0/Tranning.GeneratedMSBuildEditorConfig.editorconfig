@@ -124,12 +124,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lZUNvdXJzZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Mulie/Sem6/ASM_Trainning/Tranning/Views/TraineeCourse/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lZUNvdXJzZVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Mulie/Sem6/ASM_Trainning/Tranning/Views/TrainerTopic/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lclRvcGljXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Mulie/Sem6/ASM_Trainning/Tranning/Views/TrainerTopic/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lclRvcGljXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Mulie/Sem6/ASM_Trainning/Tranning/Views/TrainerTopic/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lclRvcGljXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Mulie/Sem6/ASM_Trainning/Tranning/Views/User/TraineeAdd.cshtml]

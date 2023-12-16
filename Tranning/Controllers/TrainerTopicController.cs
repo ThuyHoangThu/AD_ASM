@@ -108,15 +108,15 @@ namespace Tranning.Controllers
             }
 
 
-            var courseList = _dbContext.Courses
-              .Where(m => m.deleted_at == null)
-              .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
-            ViewBag.Stores = courseList;
+            var topicList = _dbContext.Topics
+                      .Where(m => m.deleted_at == null)
+                      .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
+            ViewBag.Stores = topicList;
 
-            var traineeList = _dbContext.Users
+            var trainerList = _dbContext.Users
               .Where(m => m.deleted_at == null && m.role_id == 3)
               .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.full_name }).ToList();
-            ViewBag.Stores1 = traineeList;
+            ViewBag.Stores1 = trainerList;
 
 
             Console.WriteLine(ModelState.IsValid);
@@ -132,18 +132,17 @@ namespace Tranning.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int trainer_id = 0, int topic_id = 0)
+        public IActionResult Delete(int id = 0)
         {
             try
             {
-                var data = _dbContext.TrainerTopics
-                    .Where(tc => tc.trainer_id == trainer_id && tc.topic_id == topic_id)
-                    .FirstOrDefault();
+                var data = _dbContext.TrainerTopics.FirstOrDefault(m => m.id == id);
 
                 if (data != null)
                 {
-                    data.deleted_at = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    _dbContext.SaveChanges(true);
+                    // Soft delete by updating the deleted_at field
+                    data.deleted_at = DateTime.Now;
+                    _dbContext.SaveChanges();
                     TempData["DeleteStatus"] = true;
                 }
                 else
@@ -151,12 +150,67 @@ namespace Tranning.Controllers
                     TempData["DeleteStatus"] = false;
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 TempData["DeleteStatus"] = false;
+                // Log the exception if needed: _logger.LogError(ex, "An error occurred while deleting the topic.");
             }
 
-            return RedirectToAction(nameof(TrainerTopicController.Index), "TrainerTopicController");
+            return RedirectToAction(nameof(Index), new { SearchString = "" });
+        }
+
+        [HttpGet]
+        public IActionResult Update(int id = 0)
+        {
+            TrainerTopicDetail trainertopic = new TrainerTopicDetail();
+            var data = _dbContext.TrainerTopics.Where(m => m.id == trainertopic.id).FirstOrDefault();
+            if (data != null)
+            {
+                trainertopic.id = data.id;
+                trainertopic.topic_id = data.topic_id;
+                trainertopic.trainer_id = data.trainer_id;
+            }
+
+            var topicList = _dbContext.Topics
+                  .Where(m => m.deleted_at == null)
+                  .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.name }).ToList();
+            ViewBag.Stores = topicList;
+
+            var trainerList = _dbContext.Users
+              .Where(m => m.deleted_at == null && m.role_id == 3)
+              .Select(m => new SelectListItem { Value = m.id.ToString(), Text = m.full_name }).ToList();
+            ViewBag.Stores1 = trainerList;
+
+            return View(trainertopic);
+        }
+        [HttpPost]
+        public IActionResult Update(TrainerTopicDetail trainertopic)
+        {
+
+            try
+            {
+                var data = _dbContext.TrainerTopics.Where(m => m.id == trainertopic.id).FirstOrDefault();
+
+                if (data != null)
+                {
+                    data.topic_id = trainertopic.topic_id;
+                    data.trainer_id = trainertopic.trainer_id;
+                    data.updated_at = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    _dbContext.SaveChanges(true);
+                    TempData["UpdateStatus"] = true;
+
+                }
+                else
+                {
+                    TempData["UpdateStatus"] = false;
+                }
+            }
+            catch
+            {
+                TempData["UpdateStatus"] = false;
+            }
+            return RedirectToAction(nameof(TrainerTopicController.Index), "TrainerTopic");
+
         }
     }
-}
+    }

@@ -41,7 +41,7 @@ namespace Tranning.Models
         [Required(ErrorMessage = "Please choose a status.")]
         public string status { get; set; }
 
-        public string courseName { get; set; }
+        public string? courseName { get; set; }
 
         public DateTime? created_at { get; set; }
         public DateTime? updated_at { get; set; }
