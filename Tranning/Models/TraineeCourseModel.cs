@@ -16,7 +16,8 @@ namespace Tranning.Models
         [Required(ErrorMessage = "Choose Trainee, please")]
 
         public int trainee_id { get; set; }
-        
+        public string traineeName { get; set; }
+        public string courseName { get; set; }
 
         public DateTime? created_at { get; set; }
 

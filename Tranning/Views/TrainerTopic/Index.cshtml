@@ -53,21 +53,16 @@
                     <th>TOPIC NAME</th>
                     <th>TRAINER NAME</th>
                     <th>CREATED AT</th>
-                    <th>UPDATED AT</th>
-                    <th>ACTION</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="text-center">
                 @foreach (var item in Model.TrainerTopicDetailLists)
                 {
                     <tr>
-                        <td>@item.topic_id</td>
-                        <td>@item.trainer_id</td>
+                        <td>@item.topicName</td>
+                        <td>@item.trainerName</td>
                         <td>@item.created_at</td>
-                        <td>@item.updated_at</td>
-                        <td>
-                            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", "TrainerTopicController", new { trainer_id = @item.trainer_id, topic_id = @item.topic_id })">Delete</a>
-                        </td>
+                        
                     </tr>
                 }
             </tbody>

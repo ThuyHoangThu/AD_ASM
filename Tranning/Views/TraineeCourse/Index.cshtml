@@ -53,21 +53,16 @@
                     <th>COURSE NAME</th>
                     <th>TRAINEE NAME</th>        
                     <th>CREATED AT</th>
-                    <th>UPDATED AT</th>
-                    <th>ACTION</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="text-center">
                 @foreach (var item in Model.TraineeCourseDetailLists)
                 {
                     <tr>
-                        <td>@item.course_id</td>
-                        <td>@item.trainee_id</td>                        
+                        <td>@item.courseName</td>
+                        <td>@item.traineeName</td>                        
                         <td>@item.created_at</td>
-                        <td>@item.updated_at</td>
-                        <td>
-                            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", "TraineeCourseController", new { trainee_id = @item.trainee_id, course_id = @item.course_id })">Delete</a>
-                        </td>
+                        
                     </tr>
                 }
             </tbody>

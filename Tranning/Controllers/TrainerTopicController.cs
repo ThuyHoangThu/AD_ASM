@@ -20,24 +20,46 @@ namespace Tranning.Controllers
             TrainerTopicModel trainertopicModel = new TrainerTopicModel();
             trainertopicModel.TrainerTopicDetailLists = new List<TrainerTopicDetail>();
 
-            var data = _dbContext.TrainerTopics.Where(m => m.deleted_at == null);
+            var data = _dbContext.TrainerTopics
+                .Where(m => m.deleted_at == null)
+                .Join(
+                    _dbContext.Users,
+                    trainerTopic => trainerTopic.trainer_id,
+                    trainer => trainer.id,
+                    (trainerTopic, trainer) => new
+                    {
+                        TrainerTopic = trainerTopic,
+                        TrainerName = trainer.full_name
+                    })
+                .Join(
+                    _dbContext.Topics,
+                    result => result.TrainerTopic.topic_id,
+                    topic => topic.id,
+                    (result, topic) => new
+                    {
+                        result.TrainerTopic,
+                        result.TrainerName,
+                        TopicName = topic.name
+                    })
+                .ToList();
 
-            var trainertopics = data.ToList();
-
-            foreach (var item in trainertopics)
+            foreach (var item in data)
             {
                 trainertopicModel.TrainerTopicDetailLists.Add(new TrainerTopicDetail
                 {
-                    topic_id = item.topic_id,
-                    trainer_id = item.trainer_id,
-                    created_at = item.created_at,
-                    updated_at = item.updated_at
+                    topic_id = item.TrainerTopic.topic_id,
+                    trainer_id = item.TrainerTopic.trainer_id,
+                    trainerName = item.TrainerName,
+                    topicName = item.TopicName,
+                    created_at = item.TrainerTopic.created_at,
+                    updated_at = item.TrainerTopic.updated_at
                 });
             }
 
             ViewData["CurrentFilter"] = SearchString;
             return View(trainertopicModel);
         }
+
 
         [HttpGet]
         public IActionResult Add()

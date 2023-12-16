@@ -21,26 +21,46 @@ namespace Tranning.Controllers
             TraineeCourseModel traineecourseModel = new TraineeCourseModel();
             traineecourseModel.TraineeCourseDetailLists = new List<TraineeCourseDetail>();
 
-            var data = _dbContext.TraineeCourses.Where(m => m.deleted_at == null);
+            var data = _dbContext.TraineeCourses
+                .Where(m => m.deleted_at == null)
+                .Join(
+                    _dbContext.Users,
+                    traineeCourse => traineeCourse.trainee_id,
+                    trainee => trainee.id,
+                    (traineeCourse, trainee) => new
+                    {
+                        TraineeCourse = traineeCourse,
+                        TraineeName = trainee.full_name
+                    })
+                .Join(
+                    _dbContext.Courses,
+                    result => result.TraineeCourse.course_id,
+                    course => course.id,
+                    (result, course) => new
+                    {
+                        result.TraineeCourse,
+                        result.TraineeName,
+                        CourseName = course.name
+                    })
+                .ToList();
 
-
-
-            var traineecourses = data.ToList();
-
-            foreach (var item in traineecourses)
+            foreach (var item in data)
             {
                 traineecourseModel.TraineeCourseDetailLists.Add(new TraineeCourseDetail
                 {
-                    course_id = item.course_id,
-                    trainee_id = item.trainee_id,
-                    created_at = item.created_at,
-                    updated_at = item.updated_at
+                    course_id = item.TraineeCourse.course_id,
+                    trainee_id = item.TraineeCourse.trainee_id,
+                    traineeName = item.TraineeName,
+                    courseName = item.CourseName,
+                    created_at = item.TraineeCourse.created_at,
+                    updated_at = item.TraineeCourse.updated_at
                 });
             }
 
             ViewData["CurrentFilter"] = SearchString;
             return View(traineecourseModel);
         }
+
 
         [HttpGet]
         public IActionResult Add()

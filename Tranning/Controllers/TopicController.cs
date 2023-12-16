@@ -27,19 +27,24 @@ namespace Tranning.Controllers
         {
             var data = _dbContext.Topics
                 .Where(m => m.deleted_at == null)
-                .Select(item => new TopicDetail
-                {
-                    course_id = item.course_id,
-                    id = item.id,
-                    name = item.name,
-                    description = item.description,
-                    videos = item.videos,
-                    status = item.status,
-                    attach_file = item.attach_file,
-                    documents = item.documents,
-                    created_at = item.created_at,
-                    updated_at = item.updated_at
-                })
+                .Join(
+                    _dbContext.Courses,
+                    topic => topic.course_id,
+                    course => course.id,
+                    (topic, course) => new TopicDetail
+                    {
+                        course_id = topic.course_id,
+                        courseName = course.name, // Add this line to include the course name
+                        id = topic.id,
+                        name = topic.name,
+                        description = topic.description,
+                        videos = topic.videos,
+                        status = topic.status,
+                        attach_file = topic.attach_file,
+                        documents = topic.documents,
+                        created_at = topic.created_at,
+                        updated_at = topic.updated_at
+                    })
                 .ToList();
 
             // Apply additional search filter if needed
@@ -53,6 +58,7 @@ namespace Tranning.Controllers
 
             return View(topicModel);
         }
+
 
         [HttpGet]
         public IActionResult TrainerIndex(string SearchString)
@@ -184,8 +190,6 @@ namespace Tranning.Controllers
                 string pathUploadServer = "wwwroot\\uploads\\attachfiles";
                 string attachfileName = file.FileName;
                 attachfileName = Path.GetFileName(attachfileName);
-                string uniqueStr = Guid.NewGuid().ToString();
-                attachfileName = uniqueStr + "-" + attachfileName;
                 string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), pathUploadServer, attachfileName);
                 var stream = new FileStream(uploadPath, FileMode.Create);
                 await file.CopyToAsync(stream);
@@ -207,8 +211,6 @@ namespace Tranning.Controllers
                 string pathUploadServer = "wwwroot\\uploads\\documents";
                 string documentName = file.FileName;
                 documentName = Path.GetFileName(documentName);
-                string uniqueStr = Guid.NewGuid().ToString();
-                documentName = uniqueStr + "-" + documentName;
                 string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), pathUploadServer, documentName);
                 var stream = new FileStream(uploadPath, FileMode.Create);
                 await file.CopyToAsync(stream);
@@ -361,7 +363,7 @@ namespace Tranning.Controllers
                             data.attach_file = await UploadAttachFile(topic.file);
                         }
 
-                        if (topic.photo != null)
+                        if (topic.videos != null)
                         {
                             data.videos = await UploadVideo(topic.photo);
                         }

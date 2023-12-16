@@ -17,6 +17,8 @@ namespace Tranning.DataDBContext
 
         public DbSet<TrainerTopic> TrainerTopics { get; set; }
 
+        public DbSet<Roles> Roles { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TraineeCourse>()
